@@ -4,35 +4,36 @@
       <h1 class="h3 mb-3 font-weight-normal">Create New Account</h1>
       <p>Don't let your dreams, be dreams!</p>
     </div>
-    <form class="form-register" (submit)="onRegisterSubmit">
+    <form class="form-register">
       <div class="mb-3">
         <label for="firstname">First Name</label>
-        <input type="firstname" class="form-control" id="firstname" placeholder="Shia" required>
+        <input [(ngModel)]="firstName" type="firstname" name="first" class="form-control" placeholder="Shia">
         <div class="invalid-feedback">
           First Name is required.
         </div>
       </div>
       <div class="mb-3">
         <label for="lastname">Last Name</label>
-        <input type="lastname" class="form-control" id="lastname" placeholder="LaBeouf" required>
+        <input [(ngModel)]="lastName" type="lastname" name="last" class="form-control" placeholder="LaBeouf">
         <div class="invalid-feedback">
           Last Name is required.
         </div>
       </div>
       <div class="mb-3">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="just@doit.com" required>
+        <input [(ngModel)]="email" type="email" name="email" class="form-control" placeholder="just@doit.com">
         <div class="invalid-feedback">
           Please enter a valid email address.
         </div>
       </div>
       <div class="mb-3">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="***********" required>
+        <input [(ngModel)]="password" type="password" name="password" class="form-control" placeholder="***********">
         <div class="invalid-feedback">
           Password is required.
         </div>
       </div>
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="onRegisterSubmit()">Register</button>
     </form>
+    <!-- /<app-register [firstName]="firstname.value" [lastName]="lastname.value" [email]="email.value" [password]="password.value"></app-register> -->
 </div>
